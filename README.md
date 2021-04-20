@@ -5,24 +5,15 @@ _____________________________________________________
 scopri nuovi musicisti ed i loro album, ricerca la musica che vuoi
 oppure informati sulle ultime tendenze musicali "
 
-MusicShare è un Wiki aperto, aggiungi nuovi brani, musicisti ed autori
-che hai scoperto al portare così che tutti gli utenti possano conoscerli
-	
-Diffondi nuovi stili e aiuta gli artisti a farsi conoscere.
-
-	
-- Unisciti alla comunity e diventa un **curatore** della piattaforma
- - Aggiungi nuove informazioni e mantieni aggiornato il sito
- - Fatti conoscere per i tuoi contributo
 
 ***Registrati Adesso*** 
 	
- [Registrati adesso!](http://localhost/MusicShare/registrazione/registra.html) o [Accedi al portale](http://localhost/MusicShare/login/login.html)
+ [Registrati adesso per ricevere le ultime new del mondo musicale!](http://localhost/MusicShare/registrazione/registra.html) 
 
 	
-***Se vuoi essere solo un visitatore vieni a coprire MusicShare***
+***Se vuoi essere solo un visitatore vieni a scoprire MusicShare***
 
- [Vai al sito](http://localhost/MusicShare/index.php)
+ [Vai al sito](http://localhost/MusicShare/index.html)
 
 
 
