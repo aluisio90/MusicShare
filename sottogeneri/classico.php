@@ -1,116 +1,143 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/style.css"></head>
+  <meta charset='utf-8'>
+  <link rel='stylesheet' href='style.css'></head>
   <body>
-    <div class="row" id="i6io">
-      <div class="cell"><div class="row" id="i0gd">
-        <div class="cell" id="ifo4"></div>
-      </div>
-      <div class="row"><div class="cell">
+  
+    <div id='i6io' class='row'>
+  <div class='cell'>
+    <div id='i0gd' class='row'>
+      <div id='ifo4' class='cell'>
       </div>
     </div>
-    <div class="row"><div class="cell">
-    </div>
-  </div>
-  <div class="row">
-    <div class="cell">
-    </div>
-  </div>
-  <div class="row" id="inf64">
-    <div class="cell" id="ini7h"><div id="ix7hz"><a href= 'http://localhost/MusicShare/index.html' >Indietro</a></div>
-  </div>
-</div>
-<div class="row"><div class="cell" id="il5gx">
-</div>
-</div>
-<div class="row"><div class="cell">
-</div>
-</div>
-<div class="row"><div class="cell">
-</div></div><div class="row"><div class="cell">
-</div></div><div class="row">
-  <div class="cell">
-</div>
-</div>
-</div>
-<?php
-  $mydb = new mysqli('localhost', 'root', 'pass', 'LIBRERIA');
-  if ($mydb->connect_errno){
-    
-
-            echo "
-
-            <div class='cell' id='irdf'>
-              <div class='row' id='iv9k4'>
-              <div class='cell' id='i1989'>
-                <div class='row' id='izzjf'>
-                <div class='cell' id='iyqr9'>
-                </div>
-                <div class='cell' id='ikwj2'>
-                <div id='ib0lj'><a href='' class='link'></a>Errore, impossibile conettersi al database</div>
-                </div>
-              </div>
-            </div>
-            </div>
-            </div> ";   
-  }
-  echo "OK";
-
-  $query = "SELECT DISTINCT Titolo, Durata, Nome AS Genere FROM BRANI INNER JOIN GENERI On GENERI.CodGenere = BRANI.CodGenere WHERE Nome = 'Classico';";
-
-  if (!$result = $mydb->query( $query ) ){
-    die ("Errore impossibile eseguire la query");
-  }
-  else {
-    $rows = $result->fetch_array();
-
-    while( $rows ){
-      echo "
-
-              <div class='cell' id='irdf'>
-                <div class='row' id='iv9k4'>
-                <div class='cell' id='i1989'>
-                  <div class='row' id='izzjf'>
-                  <div class='cell' id='iyqr9'>
-                  </div>
-                  <div class='cell' id='ikwj2'>
-                    <div id='ib0lj'><a href='' class='link'></a>$rows[Titolo]</div>
-                  </div>
-                </div>
-              </div>
-              </div>
-              </div> ";
-    }
-  }
-
-
-?>
-
-
-<div class="cell" id="iab1">
-  <div class="row" id="ijir">
-    <div class="cell" id="i5ef">
-    </div></div><div class="row">
-      <div class="cell">
-      </div></div><div class="row">
-        <div class="cell"></div>
+    <div class='row'>
+      <div class='cell'>
       </div>
-      <div class="row" id="ilnrn">
-        <div class="cell" id="ip558"></div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
       </div>
-      <div class="row"><div class="cell">
-      </div></div><div class="row">
-        <div class="cell">
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div id='inf64' class='row'>
+      <div id='ini7h' class='cell'>
+        <div id='ix7hz'> <a href= '../index.html'>Indietro</a>
         </div>
       </div>
-      <div class="row"><div class="cell">
+    </div>
+    <div class='row'>
+      <div id='il5gx' class='cell'>
       </div>
     </div>
-    <div class="row">
+    <div class='row'>
+      <div class='cell'>
+      </div>
     </div>
-    <div class="row">
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+  </div>
+  <div id='irdf' class='cell'>
+<?php
+
+  $maria =  new mysqli('localhost', 'root', 'pass', 'LIBRERIA');
+  echo " ggggggggggggggggggk";
+  if( $maria->connect_errno ){
+    echo "
+    <div id='iv9k4' class='row'>
+      <div id='i1989' class='cell'>
+        <div id='izzjf' class='row'>
+          <div id='iyqr9' class='cell'>
+          </div>
+          <div id='ikwj2' class='cell'>
+            <div id='ib0lj'>
+              <a href='' class='link'></a>Errore inaspettato, impossibile stabilire una conessione con il database...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>";
+  }
+  
+
+  $query = "SELECT DISTINCT BRANI.Titolo AS TitoloBrani, ALBUM.Titolo AS Album FROM ALBUM, BRANI, CONTENGONO
+            WHERE ALBUM.CodAlbum = CONTENGONO.CodAlbum AND BRANI.CodBrano = CONTENGONO.CodBrano
+            GROUP BY ALBUM.Titolo;";
+
+  if( $result = $maria->query( $query ) ){
+    $rows = $result->fetch_array();
+
+    while($rows){
+      echo "
+      <div id='iv9k4' class='row'>
+      <div id='i1989' class='cell'>
+        <div id='izzjf' class='row'>
+          <div id='iyqr9' class='cell'>
+          </div>
+          <div id='ikwj2' class='cell'>
+            <div id='ib0lj'>
+              <a href='' class='link'></a>".$rows['TitoloB']."<br>".$rows['Titolo']."
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>";
+    }
+    
+  }
+  else
+  {
+    die(" errore generico....");
+  }
+  
+
+?>
+  </div>
+  <div id='iab1' class='cell'>
+    <div id='ijir' class='row'>
+      <div id='i5ef' class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div id='ilnrn' class='row'>
+      <div id='ip558' class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='cell'>
+      </div>
+    </div>
+    <div class='row'>
+    </div>
+    <div class='row'>
     </div>
   </div>
 </div>
