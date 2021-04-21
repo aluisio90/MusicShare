@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Iscrizione</title>
+		<meta name= 'lang' value= 'it'>
+		<meta name= 'charset' value= 'utf-8'>
+		
+		<style>
+			body{
+				background-image: url('../source/640.jpg');
+				
+			}
+			
+			form{
+				background-color: white;
+				border-radius: 30px;
+				font-size: 0.5cm;
+			}
+			input{ font-size: 0.5cm;}
+
+			h1{
+				color: red;
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Registra Risultato Atleti</h1>
+		<form action= 'registra.php' method= 'POST' name= "moduloA"><br>
+			ID Gara:<input type= "text" name= "ID_G"><br>
+			ID Atleta<input type= 'text' name= 'ID_A'><br>
+			Punteggio:<input type= "number" name= "Punteggio_A"><br>
+			Posizione Atleta<input type= "text" name= "Posizione_A"><br>
+			<button type="submit" name="invio">REGISTRA</button><button type="reset" name="clear">CANCELLA</button>
+		</form>
+
+		<h1>Registra Risultato Squadra</h1>
+		<form action='registraS.php' method='POST' name="moduloS"><br>
+			ID Gara:<input type="text" name="ID_Gx"><br>
+			ID Squadra<input type='text' name='ID_Sx'><br>
+			Punteggio:<input type="number" name="Punteggio_Sx"><br>
+			Posizione Squadra<input type="text" name="Posizione_Sx"><br>
+			<button type="submit" name="i">REGISTRA</button><button type="reset" name="clear">CANCELLA</button>
+		</form>
+	</body>
+</html>

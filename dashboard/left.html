@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<style>
+		  body{
+			  position:relative;
+			  background-color:white;
+			  top: 25%;
+			  left:-5%;
+			  height: auto;
+			  width:auto;
+			  font-size: 0.80cm;
+			  padding-right:1cm;
+			  border: double 10px white;
+			  display:inline;
+
+
+		  }
+
+
+
+
+			.flex-split {
+				display:flex;
+				flex-direction:row;
+				justify-content: center;
+				height: 100vh;
+			}
+
+			li{
+				background-color: #fff;
+				border: 1px solid #333;
+				border-radius: 6px;
+				color: #333;
+				display: block;
+				font-family: sans-serif;
+				margin: 10px auto;
+				max-width: 150px;
+				padding: 10px;
+				text-align: center;
+				text-decoration: none;
+
+				transition: all .6s;
+			}
+
+			li:hover{
+				background-color: #333;
+				color: #fff;
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			a:hover{
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<img src= "source/logo2.jpg" width= "5" height= "5">
+		<div class="flex-slit">
+			<ul align= 'center'>
+			<li> <a href= 'http://localhost/MusicShare/dashboard/insert/index.php' target= 'destra'>Registra Nuovi Dati</a>
+				<br>
+			<li> <a href= 'http://localhost/MusicShare/dashboard/delete/index.php' target= 'destra'>Rimuovi dati dal sistema</a>
+				<br>
+			<li> <a href= 'http://localhost/MusicShare' target= 'destra'>Mostra sito web</a>
+				<br>
+			<li> <a href= 'http://localhost/MusicShare/dashboard/update/index.php' target= 'destra'>Aggiorna i dati nel sistema</a>
+				<br>
+			<!--utilizzare attributo target-->
+			</ul>
+		</div>
+	 </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <style>
+			body{
+				background-image: url('../source/640.jpg');
+
+			}
+
+			form{
+				background-color: white;
+				border-radius: 30px;
+				font-size: 0.5cm;
+			}
+			input{ font-size: 0.5cm;}
+
+			h1{
+				color: red;
+				background-color: white;
+			}
+		</style>
+  </head>
+  <body>
+      <h1>Seleziona Atleta</h1>
+      <form action= 'SchedaAtleta.php' method= 'post'>
+          Nome:<input type="text" name="Nome_A" value=""><br>
+          Cognome:<input type="text" name="Cognome_A" value=""><br>
+          ID Atleta:<input type="text" name="ID_A" value=""><br>
+
+          <input type="submit" name="invio" value="Cerca">
+          <input type="reset" name="res" value="Pulisci">
+      </form>
+  </body>
+</html>

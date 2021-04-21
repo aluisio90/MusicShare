@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01 Strict//EN”
+http://www.w3.org/TR/html4/strict.dtd>
+
+<html>
+  <head>
+    <meta lang="it">
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <style type="text/css">
+      body{
+        background-image: url('../source/logo.jpg');
+        background-image: linear-gradient(top left, #FFFFFF 0%, #ff6600 50%);
+        font: 24px Verdana, Arial, sans-serif;
+        padding-top: 100px;
+        background-color:white;
+        background-size: 50% 80%;
+
+
+
+      }
+
+      #box{
+        position:relative;
+        border-radius: 10px;
+        background-color: white;
+        padding: 50px 0px 40px;
+
+
+        padding-right: 1.0cm;
+        padding-left: 1.0cm;
+
+        margin-right: 40%;
+        margin-left: 40%;
+
+      }
+
+      form{
+        border-radius: 25px;
+
+      }
+
+      input{
+        border-radius: 1px;
+        border-top-style: groove;
+        border-left-style: groove;
+        border-color: #ff6600;
+
+      }
+      button{
+        margin-left: 50px;
+        position: relative;
+        margin-top: 25px;
+        margin-right: 25px;
+      }
+
+	  h1{
+		background-color:white;
+		border-style: solid;
+		border-color: black;
+	  }
+
+
+    </style>
+  </head>
+  <body>
+    <h1 align= 'center'>Nuovo Utente <br> <div style= 'color: red;'>(Si averte che tale procedura deve essere eseguita solo dagli utenti autorizzati!!)</div></h1>
+    <div id= 'box' class= 'center'>
+      <form action= 'nuovo.php' method= 'POST' align= 'center'>
+        Username <input type= "text" name= 'Username'>
+        Password <input type= "password" name= 'Password'>
+
+        <input type="submit" value="Registra">
+      </form>
+    </div>
+
+  </div>
+
+  </body>
+</html>
