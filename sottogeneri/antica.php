@@ -54,6 +54,7 @@
 <?php
 
   $maria =  new mysqli('localhost', 'root', 'pass', 'LIBRERIA');
+  
   if( $maria->connect_errno ){
     echo "
     <div id='iv9k4' class='row'>
@@ -72,8 +73,8 @@
   }
   
 
-  $query = "SELECT DISTINCT BRANI.Titolo AS TitoloBrani, ALBUM.Titolo AS Album, BRANI.CodBrano FROM ALBUM, BRANI, CONTENGONO, GENERI 
-            WHERE ALBUM.CodAlbum = CONTENGONO.CodAlbum AND BRANI.CodBrano = CONTENGONO.CodBrano AND GENERI.Nome = 'Classico' AND GENERI.CodGenere = BRANI .CodGenere
+    $query = "SELECT DISTINCT BRANI.Titolo AS TitoloBrani, ALBUM.Titolo AS Album, BRANI.CodBrano FROM ALBUM, BRANI, CONTENGONO, GENERI 
+            WHERE ALBUM.CodAlbum = CONTENGONO.CodAlbum AND BRANI.CodBrano = CONTENGONO.CodBrano AND GENERI.Nome = 'Antica' AND GENERI.CodGenere = BRANI .CodGenere
             GROUP BY ALBUM.Titolo;";
 
   if( $result = $maria->query( $query ) ){
