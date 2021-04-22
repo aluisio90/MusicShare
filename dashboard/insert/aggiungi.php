@@ -1,18 +1,37 @@
 <?php
-  $db = new mysqli('localhost','root', 'pass', 'GARE_INTERNAZIONALI' );
+  $db = new mysqli('localhost','root', 'pass', 'LIBRERIA' );
 
   if($db->connect_errno){
     die("<h1>Connesione fallita</h1>");
   }
-  if ($_POST[ID_Sq] == ''){
-    $query = "INSERT INTO ATLETI VALUES("."'$_POST[ID_A]',"."'$_POST[Nome_A]',"."'$_POST[Cognome_A]',"."'$_POST[Data_N]',"."'$_POST[Istituto]',"."'$_POST[Nazionalità_A]',"."NULL);";
-
+  
+   $albumID = "  SELECT DISTINCT CodAlbum 
+			FROM ALBUM
+			WHERE".$_POST['TitoloAlbum']; 
+  if( !$db->query($albumID)  ){
+  	$insertAlbum = "INSERT INTO ALBUM
+  			VALUES('".$_POST['DurataAlbum']."','".$_POST['Titolo']."','".$_POST['Copertina']."','".$_POST['DataPub']."','".$_POST['CodiceID']."');";	
   }
   else
   {
-    $query = "INSERT INTO ATLETI VALUES("."'$_POST[ID_A]',"."'$_POST[Nome_A]',"."'$_POST[Cognome_A]',"."'$_POST[Data_N]',"."'$_POST[Istituto]',"."'$_POST[Nazionalità_A]',"."'$_POST[ID_Sq]');";
+    $trovaM = $db->query("SELECT DISTINCT CodMusicista FROM MUSICISTA
+                          WHERE Nome = '".$_POST['Interprete']."')");
 
+    $trovaG = $db->query("SELECT DISTINCT CodGenere FROM GENERI
+                              WHERE Nome = '".$_POST['Genere']."')");
+
+    $musicista = $trovaM->fetch_array();
+    $genere =    $trovaG->fetch_array();
+    
+    if( $musicista['CodMusicista'] != ' ' && $genere['CodGenere'] != ' ')
+    $insertAlbum = "INSERT INTO BRANI
+                    VALUES('".$_POST['TitoloBrano']."','".$_POST['DurataPezzo']."','".$_POST['CodiceIDbr']."','".$musicista['CodMusicista']."','".$genere['CodGenere'].");";
+    else
+    {
+      echo "Impossibile inserire il brano, autore o Genere musicale non registrabile";
+    } 
   }
+	 
   
   if( $db->query( $query ) )
     echo "Registrazione Eseguita";

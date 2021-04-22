@@ -30,7 +30,6 @@
 		<form action= 'aggiungi.php' method= 'POST' name= "modulo"><br>
 			Titolo Album: <input type= 'text' name= 'TitoloAlbum' id= 'tit_a'><br>
 			Durata in secondi: <input type= 'time' name= 'DurataAlbum' id= 'dur_a'><br>
-			Copertina del disco: <input type= 'image' name= 'Copertina' id= 'cop'><br>
 			Data di pubblicazione: <input type= 'time' name= 'DataPub' id= 'dat_p'><br>
 
 
@@ -39,7 +38,7 @@
 			_________________________________________________________________________________________<br>
 			Titolo del brano: <input type= 'text' name= 'TitoloBrano'><br>
 			Durata del pezzo: <input type= 'text' name= 'DurataPezzo'><br>
-			Autore:  <input type= 'text' name= 'Autore' ><br>
+			Interprete:  <input type= 'text' name= 'Interprete' ><br>
 			Genere: <select type= 'text' name= 'Genere' >
 				<option value= 'Classica'>classico</option>
 				<option value= 'Pop'>pop</option>
@@ -48,7 +47,7 @@
 				<option value= 'Antica'>antica</option>
 				<option value= 'Soul'>soul</option>
 				<br>
-			CodiceID: <input name= 'CodiceID' id= 'id' value= <?php   echo random_int(500, 999) ?>><br>
+			CodiceID: <input name= 'CodiceIDbr' id= 'id' value= <?php   echo random_int(500, 999) ?>><br>
 				<button type="submit" name="invio">REGISTRA</button><button type="reset" name="clear">CANCELLA</button>
 
 
