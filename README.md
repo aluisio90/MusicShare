@@ -35,7 +35,7 @@ Gli utenti che si collegheranno al sito www.MusicShare.it vedranno come prima co
 
 |Scheda informativa dei brani|
 |----------------------------|
-Indipendentemente dalla modalità di ricerca dei brani le informazioni trovate veranno organizzate in una scheda informativa organizzata in tre sezioni distinte: la prima riguardante il brano, la seconda l'interprete e l'ultima  l'album di appartenenza del brano.<br><br>**Codice**<li>[research.php](research.php) (via form) <br><li>[login.php](research/login.php) (via link)
+Indipendentemente dalla modalità di ricerca dei brani le informazioni trovate veranno organizzate in una scheda informativa organizzata in tre sezioni distinte: la prima riguardante il brano, la seconda l'interprete e l'ultima  l'album di appartenenza del brano.<br><br>**Codice**<li>[research.php](research.php) (via form) <br><li>[ottieniBrani.php](sottogeneri/ottieniBrani.php) (via link)
 
 |**Sezione informativa del brano**|
 |---------------------------------|
@@ -58,12 +58,12 @@ Gli amministratori della piattaforma avranno a disposizione una dashboard per ge
 
 |Registra Nuovi Brani|
 |--------------------|
-La sezione della dashboard Registra Nuovi Dati permette di inserire nuove informazioni di brani registrato dall'etichetta musicale per mezzo di un apposito modulo<br><br>![](source/reg.png) ** *Le restanti senzioni seguono la medesima procedura*<br><br>**Codice**<li>[aggiungi.php](ddashboard/insert/index.php)  <br><li>[aggiungi.php](dashboard/insert/aggiungi.php)
+La sezione della dashboard Registra Nuovi Dati permette di inserire nuove informazioni di brani registrato dall'etichetta musicale per mezzo di un apposito modulo<br><br>![](source/reg.png) ** *Le restanti senzioni seguono la medesima procedura*<br><br>**Codice**<li>[aggiungi.php](dashboard/insert/index.php)
 
 |Login|
 |-----|
 L'accesso al panello di controllo (o dashboard) sarà limitato da un login che richiede come dati d'accesso "username" e "password" (gli account saranno già memorizzati nel sistema al momento del login):
-![](source/login.png)<br><br>**Codice**<li>[.html](dashboard/index.php)  <br><li>[ottieniBrani.php](ottieniBrani.php)
+![](source/login.png)<br><br>**Codice**<li>[index.html](dashboard/index.html)  
 
  |Riferimenti a risorse esterne|
  |-----------------------------|
